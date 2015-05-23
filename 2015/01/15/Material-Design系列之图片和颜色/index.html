@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Material Design系列之图片和颜色 | CursonJiang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="图片和颜色
+tint属性
+tint属性一个颜色值，可以对图片做颜色渲染，我们可以给view的背景设置tint色值，给ImageView的图片设置tint色值，也可以给任意Drawable或者NinePatchDrawable设置tint色值。
+在应用的主题中也可以通过设置 android:tint 来给主题设置统一的颜色渲染。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Material Design系列之图片和颜色">
+<meta property="og:url" content="http://cursonjiang.gitcafe.io/2015/01/15/Material-Design系列之图片和颜色/">
+<meta property="og:site_name" content="CursonJiang's Blog">
+<meta property="og:description" content="图片和颜色
+tint属性
+tint属性一个颜色值，可以对图片做颜色渲染，我们可以给view的背景设置tint色值，给ImageView的图片设置tint色值，也可以给任意Drawable或者NinePatchDrawable设置tint色值。
+在应用的主题中也可以通过设置 android:tint 来给主题设置统一的颜色渲染。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Material Design系列之图片和颜色">
+<meta name="twitter:description" content="图片和颜色
+tint属性
+tint属性一个颜色值，可以对图片做颜色渲染，我们可以给view的背景设置tint色值，给ImageView的图片设置tint色值，也可以给任意Drawable或者NinePatchDrawable设置tint色值。
+在应用的主题中也可以通过设置 android:tint 来给主题设置统一的颜色渲染。">
+
+  
+    <link rel="alternative" href="/atom.xml" title="CursonJiang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/tubiao.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="http://ww1.sinaimg.cn/large/bf974773gw1ep9cv86f42j208w08rjs2.jpg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">CursonJiang</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">成为更好的人.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cursonjiang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/3214362483" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Android/" style="font-size: 20.00px;">Android</a><a href="/tags/Android-Studio/" style="font-size: 13.33px;">Android Studio</a><a href="/tags/Animation/" style="font-size: 13.33px;">Animation</a><a href="/tags/Gradle/" style="font-size: 10.00px;">Gradle</a><a href="/tags/Mac/" style="font-size: 10.00px;">Mac</a><a href="/tags/Material-Design/" style="font-size: 16.67px;">Material Design</a><a href="/tags/Tools/" style="font-size: 13.33px;">Tools</a><a href="/tags/自定义/" style="font-size: 10.00px;">自定义</a><a href="/tags/随笔/" style="font-size: 10.00px;">随笔</a><a href="/tags/鸡汤/" style="font-size: 13.33px;">鸡汤</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">CursonJiang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://ww1.sinaimg.cn/large/bf974773gw1ep9cv86f42j208w08rjs2.jpg">
+				<hgroup>
+				  <h1 class="header-author">CursonJiang</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">成为更好的人.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cursonjiang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/3214362483" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Material-Design系列之图片和颜色" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/01/15/Material-Design系列之图片和颜色/" class="article-date">
+  	<time datetime="2015-01-15T03:26:13.000Z" itemprop="datePublished">2015年1月15日</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Material Design系列之图片和颜色
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material-Design/">Material Design</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="图片和颜色">图片和颜色</h1>
+<h2 id="tint属性">tint属性</h2>
+<p><code>tint</code>属性一个颜色值，可以对图片做颜色渲染，我们可以给view的背景设置<code>tint</code>色值，给ImageView的图片设置<code>tint</code>色值，也可以给任意Drawable或者NinePatchDrawable设置<code>tint</code>色值。</p>
+<p>在应用的主题中也可以通过设置 <code>android:tint</code> 来给主题设置统一的颜色渲染。<br><a id="more"></a></p>
+<p><code>tint</code>的渲染模式有总共有16种，xml文件中可以使用6种，代码中我们可以设置16种，渲染模式决定了渲染颜色和原图颜色的取舍和合成规则：</p>
+<h2 id="Mou_icon">Mou icon</h2>
+<ul>
+<li><code>PorterDuff.Mode.CLEAR</code> 所绘制不会提交到画布上。</li>
+<li><code>PorterDuff.Mode.SRC</code> 显示上层绘制图片</li>
+<li><code>PorterDuff.Mode.DST</code> 显示下层绘制图片</li>
+<li><code>PorterDuff.Mode.SRC_OVER</code> 正常绘制显示，上下层绘制叠盖。</li>
+<li><code>PorterDuff.Mode.DST_OVER</code> 上下层都显示。下层居上显示。</li>
+<li><code>PorterDuff.Mode.SRC_IN</code> 取两层绘制交集。显示上层。</li>
+<li><code>PorterDuff.Mode.DST_IN</code> 取两层绘制交集。显示下层。</li>
+<li><code>PorterDuff.Mode.SRC_OUT</code> 取上层绘制非交集部分。</li>
+<li><code>PorterDuff.Mode.DST_OUT</code> 取下层绘制非交集部分。</li>
+<li><code>PorterDuff.Mode.SRC_ATOP</code> 取下层非交集部分与上层交集部分</li>
+<li><code>PorterDuff.Mode.DST_ATOP</code> 取上层非交集部分与下层交集部分</li>
+<li><code>PorterDuff.Mode.XOR</code> 取两层绘制非交集。两层绘制非交集。</li>
+<li><code>PorterDuff.Mode.DARKEN</code> 上下层都显示。变暗</li>
+<li><code>PorterDuff.Mode.LIGHTEN</code> 上下层都显示。变亮</li>
+<li><code>PorterDuff.Mode.MULTIPLY</code> 取两层绘制交集</li>
+<li><code>PorterDuff.Mode.SCREEN</code> 上下层都显示。</li>
+</ul>
+<p>通过<code>tint</code>色处理的图片会原图显示出不一样的颜色，我们可以通过这种方式利用一张图片做出图片选择器的效果，让控件在按压状态下显示另外一种颜色:</p>
+<pre><code>通过给图片设置tint色生成另外一种图片
+&lt;bitmap xmlns:<span class="variable">android=</span><span class="string">"http://schemas.android.com/apk/res/android"</span>
+    android:<span class="variable">src=</span><span class="string">"@drawable/ring"</span>
+    android:<span class="variable">tintMode=</span><span class="string">"multiply"</span>
+    android:<span class="variable">tint=</span><span class="string">"#5677fc"</span> /&gt;
+利用新的图片生成图片选择器
+&lt;selector xmlns:<span class="variable">android=</span><span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;
+    &lt;item android:<span class="variable">drawable=</span><span class="string">"@drawable/tint_bitmap"</span> android:<span class="variable">state_pressed=</span><span class="string">"true"</span>/&gt;
+    &lt;item android:<span class="variable">drawable=</span><span class="string">"@drawable/ring"</span> /&gt;
+&lt;/selector&gt;
+</code></pre><h2 id="Palette调色版">Palette调色版</h2>
+<p><code>Palette</code>调色板，可以很方便的让我们从图片中提取颜色。并且可以指定提取某种类型的颜色。</p>
+<ul>
+<li><code>Vibrant</code> 鲜艳的</li>
+<li><code>Vibrant dark</code>鲜艳的暗色</li>
+<li><code>Vibrant light</code>鲜艳的亮色</li>
+<li><code>Muted</code>柔和的</li>
+<li><code>Muted dark</code>柔和的暗色</li>
+<li><code>Muted light</code>柔和的亮色</li>
+</ul>
+<p>对图片取色是一个比较消耗性能的操作，其内部会对图片的像素值进来遍历以分析对比，所以我们要在<code>异步线程</code>中去完成。</p>
+<pre><code><span class="comment">//如果操作本来就属于后台线程，可以使用：</span>
+Palette p = Palette.generate(Bitmap bitmap);
+
+<span class="comment">//如果在主线程中，我们可以使用异步的方式：</span>
+Palette.generateAsync(bitmap, <span class="keyword">new</span> Palette.PaletteAsyncListener() {
+<span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGenerated</span>(Palette palette) { }
+});
+</code></pre><p>当操作完成后或者异步回调后，我们就可以使用以下方式来获取对应的色值了，并且可以在没有获取到的情况下之指定默认值：</p>
+<pre><code>p.getVibrantColor(<span class="keyword">int</span> defaultColor);
+p.getDarkVibrantColor(<span class="keyword">int</span> defaultColor);
+p.getLightVibrantColor(<span class="keyword">int</span> defaultColor);
+p.getMutedColor(<span class="keyword">int</span> defaultColor);
+p.getDarkMutedColor(<span class="keyword">int</span> defaultColor);
+p.getLightMutedColor(<span class="keyword">int</span> defaultColor);
+</code></pre><p>在使用<code>palette之</code>前，bitmap提供获取指定位置的像素值：</p>
+<p><code>bitmap.getPixel(x,y)</code></p>
+<p>但是该方式只能获取某一点的像素值，<code>palette</code>是对整个bitmap的所有像素值进行分析，并选出几个像素占比比较多的像素值，这样选择出来的色值更符合图片的整体色值。</p>
+<h2 id="vector矢量图">vector矢量图</h2>
+<p>矢量图也称为面向对象的图像或绘图图像，是计算机图形学中用点、直线或者多边形等基于数学方程的几何图元表示图像。矢量图形最大的优点是无论放大、缩小或旋转等不会失真；最大的缺点是难以表现色彩层次丰富的逼真图像效果。</p>
+<p>Android L开始支持矢量图，我们可以用它来处理一些图形简单的icon，方便我们的适配。</p>
+<p>Android L中对矢量图的支持是通过xml文件构建，通过矢量图的path描述来生成一个矢量图，对应的java对象为<code>VectorDrawable</code>。</p>
+<p>下面是官方文档提供的一个矢量图，利用改文件，我们可以创建一个随意放大缩小都不会失真的心形</p>
+<pre><code>&lt;vector xmlns:<span class="variable">android=</span><span class="string">"http://schemas.android.com/apk/res/android"</span>
+    android:<span class="variable">height=</span><span class="string">"300dp"</span>
+    android:<span class="variable">width=</span><span class="string">"300dp"</span>
+    android:<span class="variable">viewportHeight=</span><span class="string">"40"</span>
+    android:<span class="variable">viewportWidth=</span><span class="string">"40"</span>&gt;
+    &lt;path android:<span class="variable">fillColor=</span><span class="string">"#ff00ff"</span>
+            android:<span class="variable">pathData=</span><span class="string">"M20.5,9.5
+                    c-1.955,0,-3.83,1.268,-4.5,3
+                    c-0.67,-1.732,-2.547,-3,-4.5,-3
+                    C8.957,9.5,7,11.432,7,14
+                    c0,3.53,3.793,6.257,9,11.5
+                    c5.207,-5.242,9,-7.97,9,-11.5
+                    C25,11.432,23.043,9.5,20.5,9.5z"</span>/&gt;
+&lt;/vector&gt;
+</code></pre><p>通过path命令来进行简单的图形还是可行的，但是复杂的图形我们就需要借助工具来生成了，比如使用 <code>Expression Design</code>，就可以直接粘贴来自其它软件的矢量图形，然后选择导出，导出时做如后选择：<code>文件-&gt;导出-&gt;导出属性-&gt;格式-&gt;XAML Silverlight 画布</code>，即可得到XAML格式的矢量图形，也就是Path。</p>
+<p>更多矢量图学习可参考：<a href="http://www.w3.org/TR/SVG11/paths.html#PathData" target="_blank" rel="external">http://www.w3.org/TR/SVG11/paths.html#PathData</a></p>
+<p>我们可以访问<a href="http://editor.method.ac" target="_blank" rel="external">http://editor.method.ac</a>在线制作矢量图并导出path</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/26/Material-Design系列之-全新的动画/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Material Design系列之全新的动画
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/11/Material-Design系列之新增的Widget/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Material Design系列之新增的Widget</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Material-Design系列之图片和颜色" data-title="Material Design系列之图片和颜色" data-url="http://cursonjiang.gitcafe.io/2015/01/15/Material-Design系列之图片和颜色/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"CursonJiang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 CursonJiang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

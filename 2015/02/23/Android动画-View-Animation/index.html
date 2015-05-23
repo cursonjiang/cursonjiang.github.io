@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android动画-View Animation | CursonJiang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="视图动画（View Animation）,又称补间动画（Tween Animation）,即给出两个关键帧，通过一些算法将给定属性值在给定的时间内在两个关键帧间渐变。本文首先讲解各种基本动画的使用，其实介绍View动画的工作过程。
+概述
+视图动画只能作用于View对象，是对View的变换，默认支持的类型有：
+
+透明度变化(AlphaAnimation)
+缩放(ScaleAnimation)
+位移(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android动画-View Animation">
+<meta property="og:url" content="http://cursonjiang.gitcafe.io/2015/02/23/Android动画-View-Animation/">
+<meta property="og:site_name" content="CursonJiang's Blog">
+<meta property="og:description" content="视图动画（View Animation）,又称补间动画（Tween Animation）,即给出两个关键帧，通过一些算法将给定属性值在给定的时间内在两个关键帧间渐变。本文首先讲解各种基本动画的使用，其实介绍View动画的工作过程。
+概述
+视图动画只能作用于View对象，是对View的变换，默认支持的类型有：
+
+透明度变化(AlphaAnimation)
+缩放(ScaleAnimation)
+位移(">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android动画-View Animation">
+<meta name="twitter:description" content="视图动画（View Animation）,又称补间动画（Tween Animation）,即给出两个关键帧，通过一些算法将给定属性值在给定的时间内在两个关键帧间渐变。本文首先讲解各种基本动画的使用，其实介绍View动画的工作过程。
+概述
+视图动画只能作用于View对象，是对View的变换，默认支持的类型有：
+
+透明度变化(AlphaAnimation)
+缩放(ScaleAnimation)
+位移(">
+
+  
+    <link rel="alternative" href="/atom.xml" title="CursonJiang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/tubiao.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="http://ww1.sinaimg.cn/large/bf974773gw1ep9cv86f42j208w08rjs2.jpg">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">CursonJiang</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">成为更好的人.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cursonjiang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/3214362483" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Android/" style="font-size: 20.00px;">Android</a><a href="/tags/Android-Studio/" style="font-size: 13.33px;">Android Studio</a><a href="/tags/Animation/" style="font-size: 13.33px;">Animation</a><a href="/tags/Gradle/" style="font-size: 10.00px;">Gradle</a><a href="/tags/Mac/" style="font-size: 10.00px;">Mac</a><a href="/tags/Material-Design/" style="font-size: 16.67px;">Material Design</a><a href="/tags/Tools/" style="font-size: 13.33px;">Tools</a><a href="/tags/自定义/" style="font-size: 10.00px;">自定义</a><a href="/tags/随笔/" style="font-size: 10.00px;">随笔</a><a href="/tags/鸡汤/" style="font-size: 13.33px;">鸡汤</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">CursonJiang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://ww1.sinaimg.cn/large/bf974773gw1ep9cv86f42j208w08rjs2.jpg">
+				<hgroup>
+				  <h1 class="header-author">CursonJiang</h1>
+				</hgroup>
+			</div>
+			
+			<p class="header-subtitle">成为更好的人.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cursonjiang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/3214362483" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Android动画-View-Animation" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/23/Android动画-View-Animation/" class="article-date">
+  	<time datetime="2015-02-23T05:44:42.000Z" itemprop="datePublished">2015年2月23日</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android动画-View Animation
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Animation/">Animation</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>视图动画（<code>View Animation</code>）,又称补间动画（<code>Tween Animation</code>）,即给出两个关键帧，通过一些算法将给定属性值在给定的时间内在两个关键帧间渐变。本文首先讲解各种基本动画的使用，其实介绍View动画的工作过程。</p>
+<h3 id="概述">概述</h3>
+<p>视图动画只能作用于View对象，是对View的变换，默认支持的类型有：</p>
+<ul>
+<li>透明度变化(AlphaAnimation)</li>
+<li>缩放(ScaleAnimation)</li>
+<li>位移(TranslateAnimation)</li>
+<li>旋转(RotateAnimation)<br><a id="more"></a><br>可以使用<code>AnimationSet</code>让多个动画集合在一起运行，使用插值器(<code>Interpolator</code>)设置动画的速度。</li>
+</ul>
+<p>上面说到的几种动画，以及AnimationSet都是Animation的之类，因此Animation中有的属性，以及xml的配置属性，他们都有，因此，单独说每个动画的时候只说其特有的方法和属性。对于使用xml配置时需要放到res下面的<code>animation</code>文件夹下。</p>
+<p>使用定义的xml文件,需要在代码中调用<code>AnimationUtils.loadAnimation(Context context,int id)</code></p>
+<h3 id="AlphaAnimation_透明度动画">AlphaAnimation 透明度动画</h3>
+<p>就是改变视图的透明度，可以实现淡入淡出等动画。这个动画比较简单只需要设置开始透明度和结束透明度即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Animation animation = <span class="keyword">new</span> AlphaAnimation(<span class="number">0.1f</span>, <span class="number">1.0f</span>); <span class="comment">//fromAlpha 0.1f   toAlpha 1.0f</span></div></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;alpha android:<span class="variable">fromAlpha =</span> <span class="string">"0.1f"</span> android:<span class="variable">toAlpha=</span><span class="string">"1.0f"</span> /&gt;</div></pre></td></tr></table></figure>
+
+<h3 id="ScaleAnimation_缩放">ScaleAnimation 缩放</h3>
+<p>缩放动画，支持设置开始x缩放（宽度缩放倍数），开始y缩放， 结束x缩放，结束y缩放，以及缩放基点x坐标，缩放基点y坐标。</p>
+<p>x缩放和y缩放都是相对于原始的宽度和高度的，1.0表示不缩放。</p>
+<p>坐标基点，同时有参数可以设置坐标基点类型，分别是：</p>
+<ul>
+<li><code>Animation.ABSOLUTE(默认值)</code> 相对于控件的0点的坐标值</li>
+<li><code>Animation.RELATIVE_TO_SELF</code> 相对于自己宽或者高的百分比（1.0表示100%）</li>
+<li><code>Animation.RELATIVE_TO_PARENT</code> 相对于父控件的宽或者高的百分比.</li>
+</ul>
+<p>默认基点是视图的0点，默认坐标基点类型是ABSOLUTE。</p>
+<p>有如下几种构造函数</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ScaleAnimation(Context context, AttributeSet attrs)</div><div class="line">ScaleAnimation(<span class="keyword">float</span> fromX, <span class="keyword">float</span> toX, <span class="keyword">float</span> fromY, <span class="keyword">float</span> toY)</div><div class="line"><span class="keyword">new</span> ScaleAnimation(<span class="number">1.0f</span>, <span class="number">1.5f</span>, <span class="number">1.0f</span>, <span class="number">1.5f</span>);</div><div class="line">ScaleAnimation(<span class="keyword">float</span> fromX, <span class="keyword">float</span> toX, <span class="keyword">float</span> fromY, <span class="keyword">float</span> toY, <span class="keyword">float</span> pivotX, <span class="keyword">float</span> pivotY)</div><div class="line"><span class="keyword">new</span> ScaleAnimation(<span class="number">1.0f</span>, <span class="number">1.5f</span>, <span class="number">1.0f</span>, <span class="number">1.5f</span>, <span class="number">10</span>, <span class="number">10</span>);</div><div class="line">ScaleAnimation(<span class="keyword">float</span> fromX, <span class="keyword">float</span> toX, <span class="keyword">float</span> fromY, <span class="keyword">float</span> toY, <span class="keyword">int</span> pivotXType, <span class="keyword">float</span> pivotXValue, <span class="keyword">int</span> pivotYType, <span class="keyword">float</span> pivotYValue)</div><div class="line"><span class="keyword">new</span> ScaleAnimation(<span class="number">1.0f</span>, <span class="number">1.5f</span>, <span class="number">1.0f</span>, <span class="number">1.5f</span>, Animation.RELATIVE_TO_SELF, <span class="number">0.5f</span>, Animation.RELATIVE_TO_SELF, <span class="number">0.5f</span>); <span class="comment">//以中心点为基点</span></div></pre></td></tr></table></figure>
+
+<p>XML配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;scale</div><div class="line">        android:<span class="variable">fromXScale=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">toXScale=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">fromYScale=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">toYScale=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">pivotX=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">pivotY=</span><span class="string">"float"</span> /&gt;</div></pre></td></tr></table></figure>
+
+<h3 id="TranslateAnimation_位移">TranslateAnimation 位移</h3>
+<p>平移支持x轴平移起点和y轴平移起点，以及设置结束点。同时每个点都可以设置type，type和上面缩放动画的基点类型一样,默认类型是<code>ABSOLUTE</code>.</p>
+<p>有以下几个构造函数：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">TranslateAnimation(Context context, AttributeSet attrs)</div><div class="line">TranslateAnimation(<span class="keyword">float</span> fromXDelta, <span class="keyword">float</span> toXDelta, <span class="keyword">float</span> fromYDelta, <span class="keyword">float</span> toYDelta)</div><div class="line">TranslateAnimation(<span class="keyword">int</span> fromXType, <span class="keyword">float</span> fromXValue, <span class="keyword">int</span> toXType, <span class="keyword">float</span> toXValue, <span class="keyword">int</span> fromYType, <span class="keyword">float</span> fromYValue, <span class="keyword">int</span> toYType, <span class="keyword">float</span> toYValue)</div></pre></td></tr></table></figure>
+
+<p>`<br>XML配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;translate</div><div class="line">        android:<span class="variable">fromXDelta=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">toXDelta=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">fromYDelta=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">toYDelta=</span><span class="string">"float"</span> /&gt;</div></pre></td></tr></table></figure>
+
+
+<h3 id="RoatationAnimation_旋转">RoatationAnimation 旋转</h3>
+<p>旋转支持设置旋转开始角度，和旋转结束角度，以及旋转基点，和旋转基点类型。类型同上面一样,默认旋转基点是（0，0），默认类型同上面一样，也不多说了。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function">RotateAnimation</span>(Context context, AttributeSet attrs)</div><div class="line"><span class="function">RotateAnimation</span>(<span class="attribute">float</span> fromDegrees, <span class="attribute">float</span> toDegrees)</div><div class="line"><span class="function">RotateAnimation</span>(<span class="attribute">float</span> fromDegrees, <span class="attribute">float</span> toDegrees, <span class="attribute">float</span> pivotX, <span class="attribute">float</span> pivotY)</div><div class="line"><span class="function">RotateAnimation</span>(<span class="attribute">float</span> fromDegrees, <span class="attribute">float</span> toDegrees, int pivotXType, <span class="attribute">float</span> pivotXValue, int pivotYType, <span class="attribute">float</span> pivotYValue)</div></pre></td></tr></table></figure>
+
+<p>XML配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;rotate</div><div class="line">        android:<span class="variable">fromDegrees=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">toDegrees=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">pivotX=</span><span class="string">"float"</span></div><div class="line">        android:<span class="variable">pivotY=</span><span class="string">"float"</span> /&gt;</div></pre></td></tr></table></figure>
+
+<h3 id="AnimationSet_动画集合">AnimationSet 动画集合</h3>
+<p>动画集合就是可以让多个动画一起运行，或者依次运行。</p>
+<p>通过<code>addAnimation(Animation a)</code>向集合中添加动画，使用子动画的<code>setStartOffset(long offset)</code>设置延时，从而实现子动画之间的间隔。可以设置是否共享时间插值器。</p>
+<p>xml配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">set</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--这里写子动画--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">rotation</span> <span class="attribute">....</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">alpha</span> <span class="attribute">.....</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>属性动画(Property Animation)</p>
+<h3 id="Animation">Animation</h3>
+<p>单独把Animation拿出来说，是因为前面几个都是Animation,他们有一些属性都是从父类继承的。包括时常，插值器，是否重复，监听器等。</p>
+<p><code>setFillBefore(boolean)</code>和<code>setFillAfter(boolean)</code>分别是动画开始前和动画结束后是否保持动画状态，默认前者为<code>ture</code>，后者为<code>false</code>;</p>
+<p>xml中可以配置的属性（这些在前面几个动画中省略了，也是可以使用的）：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">android</span><span class="pseudo">:detachWallpaper</span></div><div class="line"><span class="tag">android</span><span class="pseudo">:duration</span></div><div class="line"><span class="tag">android</span><span class="pseudo">:fillAfter</span></div><div class="line"><span class="tag">android</span><span class="pseudo">:fillBefore</span></div><div class="line"><span class="tag">android</span><span class="pseudo">:fillEnabled</span></div><div class="line"><span class="tag">android</span><span class="pseudo">:interpolator</span></div><div class="line"><span class="tag">android</span><span class="pseudo">:repeatCount</span></div><div class="line"><span class="tag">android</span><span class="pseudo">:repeatMode</span>   <span class="tag">INFINTE</span>(无限期)，<span class="tag">RESTART</span>（重新开始，默认值）</div><div class="line"><span class="tag">android</span><span class="pseudo">:startOffset</span></div><div class="line"><span class="tag">android</span><span class="pseudo">:zAdjustment</span>   <span class="tag">ZORDER_BOTTOM</span>,<span class="tag">ZORDER_NORMAL</span>, <span class="tag">ZORDER_TOP</span></div></pre></td></tr></table></figure>
+
+<h3 id="启动动画：">启动动画：</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">view<span class="class">.startAnimation</span>(<span class="attribute">animation</span>);</div><div class="line"><span class="comment">//或者这样</span></div><div class="line">view<span class="class">.setAnimation</span>(<span class="attribute">animation</span>);</div><div class="line"><span class="attribute">animation</span><span class="class">.start</span>();</div></pre></td></tr></table></figure>
+
+<h3 id="Interpolator_插值器">Interpolator 插值器</h3>
+<p>通过设置插值器可以改变动画的速度，以及最终效果。</p>
+<p>android sdk提供了几种默认插值器，而且这些插值器在新的protery animation上仍然可以使用，这个后面再说。</p>
+<ul>
+<li><code>AccelerateDecelerateInterpolator</code> 先加速后减速</li>
+<li><code>AccelerateInterpolator</code> 加速</li>
+<li><code>AnticipateInterPolator</code></li>
+<li><code>AnticipateOvershootInterpolator</code></li>
+<li><code>BounceInterpolator</code></li>
+<li><code>CycleInterpolator</code></li>
+<li><code>LinearInterpolator</code></li>
+<li><code>OvershootInterpolator</code></li>
+<li><code>PathInterpolator</code></li>
+</ul>
+<p>当然，我们也可以自定义<code>Interpolator</code>,一般开始值为0，结束值为1.0，然后根据算法来改变值。</p>
+<h3 id="动画原理解析">动画原理解析</h3>
+<p>动画就是根据间隔时间，不停的去刷新界面，把时间分片，在那个时间片，通过传入插值器的值到<code>Animation.applyTransformation()</code>，来计算当前的值（比如旋转角度值，透明度等）.</p>
+<p>因此，我们也可以继承Animation,从写子<code>applyTransformation()</code>来实现我们的其他的动画。</p>
+<h3 id="其他">其他</h3>
+<p>使用view动画时，如果需要用到类似基点类型和基点设置的，一定要注意设置对点，不然效果恨不如意。</p>
+<p>另外，view动画，若动画前view在a点，动画过程以及动画后，view变化了位置，则点击点仍然在原位置，这是个大问题，特别需要注意。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/01/给你90天-成为不一样的自己/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          给你90天,成为不一样的自己
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/17/Android动画-Frame-Animation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android动画-Frame Animation</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Android动画-View-Animation" data-title="Android动画-View Animation" data-url="http://cursonjiang.gitcafe.io/2015/02/23/Android动画-View-Animation/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"CursonJiang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 CursonJiang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>
